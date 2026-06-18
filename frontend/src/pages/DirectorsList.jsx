@@ -10,7 +10,6 @@ export default function DirectorsList() {
     try {
         const res = await api.get("/directors");
 
-        // FIX: backend probablemente devuelve array directo
         setData(Array.isArray(res) ? res : res.data || []);
     } catch (err) {
         console.error(err);
