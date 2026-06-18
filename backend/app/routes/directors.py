@@ -8,7 +8,7 @@ from app.models.director import Director
 router = APIRouter()
 
 
-@router.post("/", response_model=DirectorRead)
+@router.post("", response_model=DirectorRead)
 def create_director(director: DirectorCreate, db: Session = Depends(get_db)):
     new_director = Director(**director.model_dump())
     db.add(new_director)
@@ -17,7 +17,7 @@ def create_director(director: DirectorCreate, db: Session = Depends(get_db)):
     return new_director
 
 
-@router.get("/", response_model=list[DirectorRead])
+@router.get("", response_model=list[DirectorRead])
 def get_directors(db: Session = Depends(get_db)):
     return db.query(Director).all()
 

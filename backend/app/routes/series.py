@@ -9,7 +9,7 @@ from app.models.director import Director
 router = APIRouter()
 
 
-@router.post("/", response_model=SeriesRead)
+@router.post("", response_model=SeriesRead)
 def create_series(series: SeriesCreate, db: Session = Depends(get_db)):
     directors = db.query(Director).filter(
         Director.id.in_(series.director_ids)
@@ -28,7 +28,7 @@ def create_series(series: SeriesCreate, db: Session = Depends(get_db)):
     return new_series
 
 
-@router.get("/", response_model=list[SeriesRead])
+@router.get("", response_model=list[SeriesRead])
 def get_series(db: Session = Depends(get_db)):
     return db.query(Series).all()
 
