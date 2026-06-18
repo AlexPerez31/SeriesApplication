@@ -1,0 +1,15 @@
+Frontend:
+
+https://series-application.vercel.app
+
+Backend:
+
+https://seriesapplication.onrender.com
+
+Swagger:
+
+https://seriesapplication.onrender.com/docs
+
+
+NOTA: Debido a que uso servicios gratuitos de despliegue, usualmente la pagina se demora mucho en cargar, 
+y tambien se demora mucho en mostrar o actualizar informacíon desde la base de datos.
