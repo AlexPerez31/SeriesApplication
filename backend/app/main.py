@@ -15,7 +15,7 @@ app.include_router(series.router, prefix="/series", tags=["Series"])
 
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=["http://localhost:5173"],
+    allow_origins=["*"],  # luego afinamos
     allow_credentials=True,
     allow_methods=["*"],
     allow_headers=["*"],
